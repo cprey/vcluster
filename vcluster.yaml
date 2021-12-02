@@ -1,0 +1,7 @@
+vcluster:
+  extraArgs:
+    --tls-san=my-vcluster.example.com
+syncer:
+  extraArgs:
+    --out-kube-config-server=https://my-vcluster.example.com
+    --tls-san=my-vcluster.example.com
