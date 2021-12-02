@@ -1,6 +1,8 @@
 # :computer: vCluster on OSX with Minikube
 
-## Introduction - vClusters are cool. They are another cluster running inside your K8s cluster and they're very useful for deploying feature branches for testing.
+## Introduction - vClusters
+
+They are another cluster running inside your K8s cluster and they're very useful for deploying feature branches for testing. Find a lot more information at Loft.sh [vcluster site](https://www.vcluster.com/).
 
 ## what you'll need
 
