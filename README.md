@@ -2,7 +2,11 @@
 
 ## Introduction - vClusters
 
-They are another cluster running inside your K8s cluster and they're very useful for deploying feature branches for testing. Find a lot more information at Loft.sh [vcluster site](https://www.vcluster.com/).
+vClusters are another cluster running inside your K8s cluster and they're very useful for deploying feature branches for testing. Find a lot more information at Loft.sh [vcluster site](https://www.vcluster.com/). At some point, this will be available [directly from Kubernetes](https://github.com/kubernetes-sigs/multi-tenancy/tree/master/incubator/virtualcluster) but the "paint isn't yet dry" on those features.
+
+## what you'll get
+
+The vCluster described herein uses service type `loadBalancer` which is layer 4. vCluster using ingress is in the works, and that is layer 7.
 
 ## what you'll need
 
@@ -51,14 +55,6 @@ vcluster create vcluster-1 -n host-namespace-1 --expose
 vcluster connect vcluster-1 -n host-namespace-1
 ```
 
-this will place a kubeconfig.yaml into this directory
-
-export the kubeconfig to the current shell.
-
-```console
-export KUBECONFIG=./kubeconfig.yaml
-```
-
 now run `kubectl get nodes` from both the vcluster and regular shell.
 
 run `kubectl get all --all-namespaces` from your regular shell to see what's been deployed.
@@ -67,8 +63,14 @@ run `kubectl get all --all-namespaces` from your regular shell to see what's bee
 
 > use the vcluster shell for this
 
+this will place a `kubeconfig.yaml` into this directory. export the kubeconfig to the current shell.
+
+```console
+export KUBECONFIG=./kubeconfig.yaml
+```
+
 1. deploy an Nginx instance with service type loadbalancer
-    - `kubectl apply -f nginxdemo.yaml`
+    - `kubectl apply -f ../nginxdemo.yaml`
     - `k get svc` will show you the external IP and port which you can hit using cURL. Chances are it's the first IP in the IP pool you picked.
 
     ```console
