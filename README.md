@@ -2,7 +2,7 @@
 
 ## Introduction - vClusters
 
-vClusters are another cluster running inside your K8s cluster and they're very useful for deploying feature branches for testing. Find a lot more information at Loft.sh [vcluster site](https://www.vcluster.com/). At some point, this will be available [directly from Kubernetes](https://github.com/kubernetes-sigs/multi-tenancy/tree/master/incubator/virtualcluster) but the "paint isn't yet dry" on those features.
+vClusters are another cluster running inside your K8s cluster and they're very useful for deploying feature branches for testing. Find a lot more information at Loft.sh [vcluster site](https://www.vcluster.com/). At some point, this will be available [directly from Kubernetes](https://github.com/kubernetes-sigs/cluster-api-provider-nested/tree/main/virtualcluster) but the "paint isn't yet dry" on those features.
 
 ## what you'll get
 
